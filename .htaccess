@@ -1,0 +1,31 @@
+RewriteEngine on
+
+RewriteRule ^Contact-US contact-us.php [L]
+
+RewriteRule ^Home index.php [L]
+
+RewriteRule ^Packages packages.php [L]
+
+RewriteRule ^FAQ faq.php [L]
+
+RewriteRule ^About about.php [L]
+
+RewriteRule ^Contact contact.php [L]
+
+RewriteRule ^Cart cart.php [L]
+
+RewriteRule ^Checkout checkout.php [L]
+
+RewriteRule ^Product product.php [L]
+
+RewriteRule ^Payment payment.php [L]
+
+RewriteRule ^Pay pay.php [L]
+
+RewriteRule ^Newsletter newsletter.php [L]
+
+RewriteRule ^Server-Config php-info.php [L]
+
+RewriteRule ^Voucher voucher.php [L]
+
+RewriteRule ^Terms-and-Condition terms-and-condition.php [L]

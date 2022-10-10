@@ -3,7 +3,7 @@
 <html lang="en" class="h-100">
 
 
-<!-- Mirrored from eres.dexignzone.com/xhtml/page-error-404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:51 GMT -->
+<!-- Mirrored from eres.dexignzone.com/xhtml/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:51 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +25,7 @@
                         <h4><i class="fa fa-exclamation-triangle text-warning"></i> The page you were looking for is not found!</h4>
                         <p>You may have mistyped the address or the page may have moved.</p>
 						<div>
-                            <a class="btn btn-primary" href="index.html">Back to Home</a>
+                            <a class="btn btn-primary" href="dashboard.html">Back to Home</a>
                         </div>
                     </div>
                 </div>
@@ -43,5 +43,5 @@
 <script src="js/deznav-init.js"></script>
 
 
-<!-- Mirrored from eres.dexignzone.com/xhtml/page-error-404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:51 GMT -->
+<!-- Mirrored from eres.dexignzone.com/xhtml/404.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:51 GMT -->
 </html>

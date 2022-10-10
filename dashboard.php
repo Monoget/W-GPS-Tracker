@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from eres.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:20:25 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +10,6 @@
 	<link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link href="../../cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
-
 </head>
 <body>
 
@@ -41,7 +36,7 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
+            <a href="dashboard.html" class="brand-logo">
                 <img class="logo-abbr" src="images/logo.png" alt="">
                 <img class="logo-compact" src="images/logo-text.png" alt="">
                 <img class="brand-title" src="images/logo-text.png" alt="">
@@ -742,7 +737,7 @@
                                         <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                         <span class="ml-2">Inbox </span>
                                     </a>
-                                    <a href="page-login.html" class="dropdown-item ai-icon">
+                                    <a href="index.html" class="dropdown-item ai-icon">
                                         <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                         <span class="ml-2">Logout </span>
                                     </a>
@@ -763,12 +758,12 @@
         <div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="index.html">Dashboard</a></li>
+							<li><a href="dashboard.html">Dashboard</a></li>
 							<li><a href="patient-list.html">Patient</a></li>
 							<li><a href="patient-details.html">Patient Details</a></li>
 							<li><a href="doctor-list.html">Doctor</a></li>
@@ -776,13 +771,13 @@
 							<li><a href="page-review.html">Review</a></li>
 						</ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 						<i class="flaticon-381-television"></i>
 							<span class="nav-text">Apps</span>
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="app-profile.html">Profile</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Email</a>
+                            <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Email</a>
                                 <ul aria-expanded="false">
                                     <li><a href="email-compose.html">Compose</a></li>
                                     <li><a href="email-inbox.html">Inbox</a></li>
@@ -790,7 +785,7 @@
                                 </ul>
                             </li>
                             <li><a href="app-calender.html">Calendar</a></li>
-							<li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Shop</a>
+							<li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Shop</a>
                                 <ul aria-expanded="false">
                                     <li><a href="ecom-product-grid.html">Product Grid</a></li>
 									<li><a href="ecom-product-list.html">Product List</a></li>
@@ -803,7 +798,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-controls-3"></i>
 							<span class="nav-text">Charts</span>
 						</a>
@@ -816,7 +811,7 @@
                             <li><a href="chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-internet"></i>
 							<span class="nav-text">Bootstrap</span>
 						</a>
@@ -841,7 +836,7 @@
 
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-heart"></i>
 							<span class="nav-text">Plugins</span>
 						</a>
@@ -860,7 +855,7 @@
 							<span class="nav-text">Widget</span>
 						</a>
 					</li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Forms</span>
 						</a>
@@ -872,7 +867,7 @@
                             <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-network"></i>
 							<span class="nav-text">Table</span>
 						</a>
@@ -881,18 +876,18 @@
                             <li><a href="table-datatable-basic.html">Datatable</a></li>
                         </ul>
                     </li>
-                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
 							<i class="flaticon-381-layer-1"></i>
 							<span class="nav-text">Pages</span>
 						</a>
                         <ul aria-expanded="false">
                             <li><a href="page-register.html">Register</a></li>
-                            <li><a href="page-login.html">Login</a></li>
-                            <li><a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
+                            <li><a href="index.html">Login</a></li>
+                            <li><a class="has-arrow" href="javascript:void(0)" aria-expanded="false">Error</a>
                                 <ul aria-expanded="false">
                                     <li><a href="page-error-400.html">Error 400</a></li>
                                     <li><a href="page-error-403.html">Error 403</a></li>
-                                    <li><a href="page-error-404.html">Error 404</a></li>
+                                    <li><a href="404.html">Error 404</a></li>
                                     <li><a href="page-error-500.html">Error 500</a></li>
                                     <li><a href="page-error-503.html">Error 503</a></li>
                                 </ul>
@@ -1438,6 +1433,4 @@
 	</script>
 	
 </body>
-
-<!-- Mirrored from eres.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:20:52 GMT -->
 </html>

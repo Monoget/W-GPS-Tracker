@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 
-<!-- Mirrored from eres.dexignzone.com/xhtml/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:05 GMT -->
+<!-- Mirrored from eres.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:05 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -73,5 +73,5 @@
 </body>
 
 
-<!-- Mirrored from eres.dexignzone.com/xhtml/page-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:05 GMT -->
+<!-- Mirrored from eres.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Nov 2021 07:21:05 GMT -->
 </html>

@@ -20466,7 +20466,7 @@ Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Comp
 
 /*$primary  : #7356f1 !default;*/
 [data-theme-version="transparent"] {
-  background: url("../page-error-404.html");
+  background: url("../404.html");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -23156,7 +23156,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    background: url(../page-error-404.html) no-repeat 0 0; }
+    background: url(../404.html) no-repeat 0 0; }
   .cd-h-timeline__navigation:hover {
     border-color: #2bc155; }
 
