@@ -56,6 +56,17 @@ if(isset($_SESSION["name"])){
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link href="css/style.css" rel="stylesheet">
+    <link href="vendor/toastr/css/toastr.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        .toast-success {
+            background-color: #36C95F;
+        }
+
+
+        .toast-error {
+            background-color: #b50000;
+        }
+    </style>
 
 </head>
 
@@ -100,6 +111,8 @@ if(isset($_SESSION["name"])){
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <script src="js/custom.min.js"></script>
     <script src="js/deznav-init.js"></script>
+    <script src="vendor/toastr/js/toastr.min.js" type="text/javascript"></script>
+    <script src="js/plugins-init/toastr-init.js" type="text/javascript"></script>
 
 </body>
 </html>
