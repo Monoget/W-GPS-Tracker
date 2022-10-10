@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 09:36 PM
+-- Generation Time: Oct 10, 2022 at 10:02 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,8 +43,35 @@ CREATE TABLE `admin_login` (
 --
 
 INSERT INTO `admin_login` (`id`, `name`, `ip`, `image`, `email`, `password`, `role`, `updated_at`) VALUES
-(1, 'Monoget Saha', '27.147.190.199', 'public/images/profile/monoget.png', 'monoget1@gmail.com', '@BCD1234', 'admin', '2022-02-06 17:16:17'),
-(2, 'Super Admin', '103.107.160.134', 'public/images/avatar-01.jpg', 'admin@gmail.com', '@BCD1234', 'admin', '2022-02-10 17:09:43');
+(1, 'Monoget Saha', '27.147.190.199', 'images/profile/12.png', 'monoget1@gmail.com', '@BCD1234', 'admin', '2022-10-10 20:02:16'),
+(2, 'Super Admin', '103.107.160.134', 'images/profile/12.png', 'admin@gmail.com', '@BCD1234', 'admin', '2022-10-10 20:02:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `route`
+--
+
+CREATE TABLE `route` (
+  `id` int(11) NOT NULL,
+  `vehicle_id` int(11) NOT NULL,
+  `latitude` varchar(50) NOT NULL,
+  `langditude` varchar(50) NOT NULL,
+  `inserted_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle`
+--
+
+CREATE TABLE `vehicle` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `inserted_at` datetime NOT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -57,6 +84,18 @@ ALTER TABLE `admin_login`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `route`
+--
+ALTER TABLE `route`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -65,6 +104,18 @@ ALTER TABLE `admin_login`
 --
 ALTER TABLE `admin_login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `route`
+--
+ALTER TABLE `route`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `vehicle`
+--
+ALTER TABLE `vehicle`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
