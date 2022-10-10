@@ -4,16 +4,16 @@ class DBController {
     private $user = "root";
     private $password = "";
     private $database = "gps_tracker";
-    private $from_email='noreply@speedyroadtestnys.com';
+    private $from_email='noreply@dotest.live';
     private $notification_email='monoget1@gmail.com';
     private $conn;
 
     function __construct() {
-        if($_SERVER['SERVER_NAME']=="test.speedyroadtestnys.com"||$_SERVER['SERVER_NAME']=="www.test.speedyroadtestnys.com"){
-            $this->host = "localhost";
-            $this->user = "ulgfbo2sp1li5";
-            $this->password = "#1_5#fj1%@1e";
-            $this->database = "dbxegafvwhdpmv";
+        if($_SERVER['SERVER_NAME']=="tracker.dotest.live"||$_SERVER['SERVER_NAME']=="www.tracker.dotest.live"){
+            $this->host = "premium11";
+            $this->user = "biplgmwr_tracker";
+            $this->password = "AzUzsB27Xc=1";
+            $this->database = "biplgmwr_tracker";
         }
 
         $this->conn = $this->connectDB();
