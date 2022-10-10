@@ -1,3 +1,51 @@
+<?php
+session_start();
+require_once("includes/dbController.php");
+$db_handle = new DBController();
+if (isset($_POST["submit"])) {
+    $email = $db_handle->checkValue($_POST['email']);
+    $password = $db_handle->checkValue($_POST['password']);
+
+    $login = $db_handle->numRows("SELECT * FROM admin_login WHERE email='$email' and password='$password'");
+
+    $login_data = $db_handle->runQuery("SELECT * FROM admin_login WHERE email='$email' and password='$password'");
+
+    if($login==1){
+        $_SESSION['user_id']=$login_data[0]["id"];
+        $_SESSION['name']=$login_data[0]["name"];
+        $_SESSION['role']=$login_data[0]["role"];
+        $_SESSION['image']=$login_data[0]["image"];
+
+        echo "<script>
+                document.cookie = 'alert = 1;';
+                window.location.href='Dashboard';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 2;';
+                window.location.href='Login';
+                </script>";
+    }
+}
+
+/*$check_ip = $db_handle->numRows("SELECT * FROM admin_login WHERE ip='{$_SERVER['REMOTE_ADDR']}'");
+
+if($check_ip>=1){
+    echo "<script>
+                window.location.href='../admin';
+                </script>";
+}else{
+    echo "<script>
+                window.location.href='../Home';
+                </script>";
+}*/
+
+if(isset($_SESSION["name"])){
+    echo "<script>
+                window.location.href='Dashboard';
+                </script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
@@ -21,17 +69,17 @@
                             <div class="col-xl-12">
                                 <div class="auth-form">
                                     <h4 class="text-center mb-4">Sign in your account</h4>
-                                    <form action="https://eres.dexignzone.com/xhtml/index.html">
+                                    <form action="" method="post">
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Email</strong></label>
-                                            <input type="email" class="form-control" placeholder="hello@example.com">
+                                            <input type="email" name="email" class="form-control" placeholder="hello@example.com">
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1"><strong>Password</strong></label>
-                                            <input type="password" class="form-control" placeholder="Password">
+                                            <input type="password" name="password" class="form-control" placeholder="Password">
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary btn-block">Sign Me In</button>
+                                            <button type="submit" name="submit" class="btn btn-primary btn-block">Sign Me In</button>
                                         </div>
                                     </form>
                                 </div>

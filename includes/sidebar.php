@@ -13,12 +13,12 @@
                     <span class="nav-text">Vehicle</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="chart-flot.html">Add Vehicle</a></li>
-                    <li><a href="chart-morris.html">Vehicle List</a></li>
+                    <li><a href="Add-Vehicle">Add Vehicle</a></li>
+                    <li><a href="Vehicle-List">Vehicle List</a></li>
                 </ul>
             </li>
             <li>
-                <a class="has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <a href="Route" aria-expanded="false">
                     <i class="flaticon-381-internet"></i>
                     <span class="nav-text">Route</span>
                 </a>
@@ -29,8 +29,8 @@
                     <span class="nav-text">User</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="app-profile.html">Add User</a></li>
-                    <li><a href="app-calender.html">User List</a></li>
+                    <li><a href="Add-User">Add User</a></li>
+                    <li><a href="User-List">User List</a></li>
                 </ul>
             </li>
         </ul>
