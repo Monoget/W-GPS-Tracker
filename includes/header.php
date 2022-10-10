@@ -4,7 +4,11 @@
             <div class="collapse navbar-collapse justify-content-between">
                 <div class="header-left">
                     <div class="dashboard_bar">
-                        Dashboard
+                        <?php
+                        $uri = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
+                        $header = str_replace("-", " ", $uri);
+                        echo $header;
+                        ?>
                     </div>
                 </div>
 
