@@ -69,26 +69,20 @@ $db_handle = new DBController();
                                 <table id="example3" class="display min-w850">
                                     <thead>
                                     <tr>
-                                        <th></th>
+                                        <th>SL</th>
                                         <th>Name</th>
-                                        <th>Department</th>
-                                        <th>Gender</th>
-                                        <th>Education</th>
-                                        <th>Mobile</th>
-                                        <th>Email</th>
-                                        <th>Joining Date</th>
+                                        <th>Number</th>
+                                        <th>Inserted At</th>
+                                        <th>Updated At</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
+                                        <td>1</td>
                                         <td>Tiger Nixon</td>
                                         <td>Architect</td>
-                                        <td>Male</td>
-                                        <td>M.COM., P.H.D.</td>
-                                        <td><a href="javascript:void(0);"><strong>123 456 7890</strong></a></td>
-                                        <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
+                                        <td>2011/04/25</td>
                                         <td>2011/04/25</td>
                                         <td>
                                             <div class="d-flex">
