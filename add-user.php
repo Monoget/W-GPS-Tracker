@@ -59,7 +59,66 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row">
-
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add User</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
+                                <form action="Insert" method="post">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Name <span class="text-danger">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="name" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">User Email <span class="text-danger">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input type="email" name="email" class="form-control" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">User Password <span class="text-danger">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input type="email" name="password" class="form-control" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">User Icon</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input">
+                                                    <label class="custom-file-label">Choose file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Role <span class="text-danger">*</span></label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="sel1">
+                                                <option>Choose...</option>
+                                                <option>Teacher</option>
+                                                <option>Admin</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary" name="addVehicle">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

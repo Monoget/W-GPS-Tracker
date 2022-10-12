@@ -59,7 +59,36 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row">
-
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add Vehicle</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="basic-form">
+                                <form action="Insert" method="post">
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Vehicle Name <span class="text-danger">*</span></label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="name" class="form-control" placeholder="Ex: Rupsha">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Driver Number</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="name" class="form-control" placeholder="Ex: 01XXX-XXXXXX">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-10">
+                                            <button type="submit" class="btn btn-primary" name="addVehicle">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
