@@ -79,20 +79,29 @@ $db_handle = new DBController();
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                    $data = $db_handle->runQuery("SELECT * FROM admin_login order by id desc");
+                                    $row_count = $db_handle->numRows("SELECT * FROM admin_login order by id desc");
+
+                                    for ($i = 0; $i < $row_count; $i++) {
+                                    ?>
                                     <tr>
-                                        <td><img class="rounded-circle" width="35" src="images/profile/small/pic1.jpg" alt=""></td>
-                                        <td>Tiger Nixon</td>
-                                        <td><a href="javascript:void(0);"><strong>info@example.com</strong></a></td>
-                                        <td>Architect</td>
-                                        <td>2011/04/25</td>
-                                        <td>2011/04/25</td>
+                                        <td><img class="rounded-circle" width="35" src="<?php echo $data[$i]["image"]; ?>" alt=""></td>
+                                        <td><?php echo $data[$i]["name"]; ?></td>
+                                        <td><a href="javascript:void(0);"><strong><?php echo $data[$i]["email"]; ?></strong></a></td>
+                                        <td><?php echo $data[$i]["role"]; ?></td>
+                                        <td><?php echo $data[$i]["inserted_at"]; ?></td>
+                                        <td><?php echo $data[$i]["updated_at"]; ?></td>
                                         <td>
                                             <div class="d-flex">
-                                                <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                <a href="User-List?user_id=<?php echo $data[$i]["id"]; ?>" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                                                <a href="User-List?del_user_id=<?php echo $data[$i]["id"]; ?>" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
+                                        <?php
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

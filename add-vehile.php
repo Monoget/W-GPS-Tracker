@@ -70,13 +70,19 @@ $db_handle = new DBController();
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Vehicle Name <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="name" class="form-control" placeholder="Ex: Rupsha">
+                                            <input type="text" name="name" class="form-control" placeholder="Ex: Rupsha" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-3 col-form-label">Driver Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="driver_name" class="form-control" placeholder="Ex: XXXX">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Driver Number</label>
                                         <div class="col-sm-9">
-                                            <input type="text" name="name" class="form-control" placeholder="Ex: 01XXX-XXXXXX">
+                                            <input type="text" name="driver_number" class="form-control" placeholder="Ex: 01XXX-XXXXXX">
                                         </div>
                                     </div>
                                     <div class="form-group row">

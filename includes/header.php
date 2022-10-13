@@ -6,7 +6,8 @@
                     <div class="dashboard_bar">
                         <?php
                         $uri = substr($_SERVER['REQUEST_URI'], strrpos($_SERVER['REQUEST_URI'], '/') + 1);
-                        $header = str_replace("-", " ", $uri);
+                        $first = strtok($uri, '?');
+                        $header = str_replace("-", " ", $first);
                         echo $header;
                         ?>
                     </div>

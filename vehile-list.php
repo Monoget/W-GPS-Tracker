@@ -59,44 +59,112 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Vehicle List</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table id="example3" class="display min-w850">
-                                    <thead>
-                                    <tr>
-                                        <th>SL</th>
-                                        <th>Name</th>
-                                        <th>Number</th>
-                                        <th>Inserted At</th>
-                                        <th>Updated At</th>
-                                        <th>Action</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>Architect</td>
-                                        <td>2011/04/25</td>
-                                        <td>2011/04/25</td>
-                                        <td>
-                                            <div class="d-flex">
-                                                <a href="#" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                                <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                <?php
+                if (isset($_GET["vehicle_id"])) {
+                    $data = $db_handle->runQuery("SELECT * FROM vehicle where id={$_GET["vehicle_id"]}");
+                    ?>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit Vehicle</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+                                    <form action="Update" method="post">
+                                        <input type="hidden" name="id" value="<?php echo $data[0]["id"]; ?>" required>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Vehicle Name <span
+                                                        class="text-danger">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="name" class="form-control"
+                                                       placeholder="Ex: Rupsha" value="<?php echo $data[0]["name"]; ?>" required>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Driver Name</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="driver_name" class="form-control"
+                                                       placeholder="Ex: XXXX" value="<?php echo $data[0]["driver_name"]; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Driver Number</label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="driver_number" class="form-control"
+                                                       placeholder="Ex: 01XXX-XXXXXX" value="<?php echo $data[0]["driver_number"]; ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary" name="editVehicle">Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <?php
+                } else {
+                    ?>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Vehicle List</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table id="example3" class="display min-w850">
+                                        <thead>
+                                        <tr>
+                                            <th>SL</th>
+                                            <th>Vehicle Name</th>
+                                            <th>Driver Name</th>
+                                            <th>Driver Number</th>
+                                            <th>Inserted At</th>
+                                            <th>Updated At</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        $data = $db_handle->runQuery("SELECT * FROM vehicle order by id desc");
+                                        $row_count = $db_handle->numRows("SELECT * FROM vehicle order by id desc");
+
+                                        for ($i = 0; $i < $row_count; $i++) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $i + 1; ?></td>
+                                                <td><?php echo $data[$i]["name"]; ?></td>
+                                                <td><?php echo $data[$i]["driver_name"]; ?></td>
+                                                <td><?php echo $data[$i]["driver_number"]; ?></td>
+                                                <td><?php echo $data[$i]["inserted_at"]; ?></td>
+                                                <td><?php echo $data[$i]["updated_at"]; ?></td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                        <a href="Vehicle-List?vehicle_id=<?php echo $data[$i]["id"]; ?>"
+                                                           class="btn btn-primary shadow btn-xs sharp mr-1"><i
+                                                                    class="fa fa-pencil"></i></a>
+                                                        <a href="Vehicle-List?del_vehicle_id=<?php echo $data[$i]["id"]; ?>"
+                                                           class="btn btn-danger shadow btn-xs sharp"><i
+                                                                    class="fa fa-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

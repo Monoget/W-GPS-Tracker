@@ -66,7 +66,7 @@ $db_handle = new DBController();
                         </div>
                         <div class="card-body">
                             <div class="basic-form">
-                                <form action="Insert" method="post">
+                                <form action="Insert" method="post" enctype="multipart/form-data">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Name <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
@@ -82,7 +82,7 @@ $db_handle = new DBController();
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">User Password <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <input type="email" name="password" class="form-control" placeholder="Password">
+                                            <input type="password" name="password" class="form-control" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -93,7 +93,7 @@ $db_handle = new DBController();
                                                     <span class="input-group-text">Upload</span>
                                                 </div>
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input">
+                                                    <input type="file" class="custom-file-input" name="user_icon">
                                                     <label class="custom-file-label">Choose file</label>
                                                 </div>
                                             </div>
@@ -102,16 +102,16 @@ $db_handle = new DBController();
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Role <span class="text-danger">*</span></label>
                                         <div class="col-sm-9">
-                                            <select class="form-control" id="sel1">
+                                            <select class="form-control" id="sel1" name="role">
                                                 <option>Choose...</option>
-                                                <option>Teacher</option>
-                                                <option>Admin</option>
+                                                <option value="Teacher">Teacher</option>
+                                                <option value="Admin">Admin</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary" name="addVehicle">Submit</button>
+                                            <button type="submit" class="btn btn-primary" name="addUser">Submit</button>
                                         </div>
                                     </div>
                                 </form>
