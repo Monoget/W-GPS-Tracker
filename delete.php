@@ -9,6 +9,9 @@ if (isset($_GET['vehicle_id'])) {
 }
 
 if (isset($_GET['user_id'])) {
+    $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$_GET['user_id']}");
+    unlink($data[0]["image"]);
+
     $db_handle->runQuery("delete FROM admin_login where id={$_GET['user_id']}");
     echo 'success';
 }

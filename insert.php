@@ -28,7 +28,6 @@ if (isset($_POST["addUser"])) {
     $role = $db_handle->checkValue($_POST['role']);
     $inserted_at=date("Y-m-d H:i:s");
 
-
     $attach_files = '';
     if (!empty($_FILES['user_icon']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
@@ -52,10 +51,18 @@ if (isset($_POST["addUser"])) {
         $attach_files = 'images/profile/12.png';
     }
 
-    $insert = $db_handle->insertQuery("INSERT INTO `admin_login`( `name`, `image`, `email`, `password`, `role`, `inserted_at`) VALUES ('$name','$attach_files','$email','$password','$role','$inserted_at')");
+    $row = $db_handle->numRows("SELECT * FROM admin_login where email={$email}");
+    if($row==0){
+        $insert = $db_handle->insertQuery("INSERT INTO `admin_login`( `name`, `image`, `email`, `password`, `role`, `inserted_at`) VALUES ('$name','$attach_files','$email','$password','$role','$inserted_at')");
 
-    echo "<script>
+        echo "<script>
                 document.cookie = 'alert = 3;';
                 window.location.href='Add-User';
                 </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 7;';
+                window.location.href='Add-User';
+                </script>";
+    }
 }

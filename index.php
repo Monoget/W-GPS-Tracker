@@ -12,9 +12,7 @@ if (isset($_POST["submit"])) {
 
     if($login==1){
         $_SESSION['user_id']=$login_data[0]["id"];
-        $_SESSION['name']=$login_data[0]["name"];
         $_SESSION['role']=$login_data[0]["role"];
-        $_SESSION['image']=$login_data[0]["image"];
 
         echo "<script>
                 document.cookie = 'alert = 1;';

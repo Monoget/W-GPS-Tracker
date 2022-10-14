@@ -13,12 +13,15 @@
                     </div>
                 </div>
 
+                <?php
+                    $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$_SESSION['user_id']}");
+                ?>
                 <ul class="navbar-nav header-right">
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="javascript:;" role="button" data-toggle="dropdown">
-                            <img src="images/profile/12.png" width="20" alt=""/>
+                            <img src="<?php echo $data[0]["image"]; ?>" width="20" alt=""/>
                             <div class="header-info">
-                                <span>Hello,<strong> <?php echo $_SESSION['name']; ?></strong></span>
+                                <span>Hello,<strong> <?php echo $data[0]["name"]; ?></strong></span>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">

@@ -77,19 +77,19 @@ $db_handle = new DBController();
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Name <span class="text-danger">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="text" name="name" class="form-control" value="<?php echo $data[0]["name"]; ?>" placeholder="Name">
+                                                <input type="text" name="name" class="form-control" value="<?php echo $data[0]["name"]; ?>" placeholder="Name" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">User Email <span class="text-danger">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="email" name="email" class="form-control" value="<?php echo $data[0]["email"]; ?>" placeholder="Email">
+                                                <input type="email" name="email" class="form-control" value="<?php echo $data[0]["email"]; ?>" placeholder="Email" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">User Password <span class="text-danger">*</span></label>
                                             <div class="col-sm-9">
-                                                <input type="password" name="password" class="form-control" value="<?php echo $data[0]["password"]; ?>" placeholder="Password">
+                                                <input type="password" name="password" class="form-control" value="<?php echo $data[0]["password"]; ?>" placeholder="Password" required>
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -112,7 +112,7 @@ $db_handle = new DBController();
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Role <span class="text-danger">*</span></label>
                                             <div class="col-sm-9">
-                                                <select class="form-control" id="sel1" name="role">
+                                                <select class="form-control" id="sel1" name="role" required>
                                                     <option>Choose...</option>
                                                     <option value="Teacher" <?php
                                                                                 if($data[0]["role"]=='Teacher')

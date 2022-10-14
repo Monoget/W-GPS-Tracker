@@ -29,7 +29,7 @@ if (isset($_POST["editUser"])) {
     $role = $db_handle->checkValue($_POST['role']);
 
     $attach_files = '';
-    $query_add='';
+    $query_add = '';
     if (!empty($_FILES['user_icon']['name'])) {
         $RandomAccountNumber = mt_rand(1, 99999);
 
@@ -50,18 +50,98 @@ if (isset($_POST["editUser"])) {
 
             move_uploaded_file($file_tmp, "images/profile/" . $file_name);
             $attach_files = 'images/profile/' . $file_name;
-            $query_add.=",`image`='".$attach_files."'";
+            $query_add .= ",`image`='" . $attach_files . "'";
             echo $query_add;
         }
 
     } else {
-        $query_add.='';
+        $query_add .= '';
     }
 
-    $update = $db_handle->insertQuery("UPDATE `admin_login` SET `name`='$name'".$query_add.",`email`='$email',`password`='$password',`role`='$role' WHERE id='$id'");
+    $row = $db_handle->numRows("SELECT * FROM admin_login where email={$email}");
+    if ($row == 0) {
+        $update = $db_handle->insertQuery("UPDATE `admin_login` SET `name`='$name'" . $query_add . ",`email`='$email',`password`='$password',`role`='$role' WHERE id='$id'");
 
-    echo "<script>
+        echo "<script>
                 document.cookie = 'alert = 4;';
                 window.location.href='User-List';
                 </script>";
+    } else {
+        echo "<script>
+                document.cookie = 'alert = 7;';
+                window.location.href='User-List';
+                </script>";
+    }
+}
+
+if (isset($_POST["editProfile"])) {
+    $id = $db_handle->checkValue($_SESSION['user_id']);
+
+    $name = $db_handle->checkValue($_POST['name']);
+
+
+    $attach_files = '';
+    $query_add = '';
+    if (!empty($_FILES['user_icon']['name'])) {
+        $RandomAccountNumber = mt_rand(1, 99999);
+
+        $file_name = $RandomAccountNumber . "_" . $_FILES['user_icon']['name'];
+        $file_size = $_FILES['user_icon']['size'];
+        $file_tmp = $_FILES['user_icon']['tmp_name'];
+
+        $file_type = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        if (
+            $file_type != "jpg" && $file_type != "png" && $file_type != "jpeg"
+            && $file_type != "gif"
+        ) {
+            $attach_files = '';
+        } else {
+
+            $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$id}");
+            unlink($data[0]["image"]);
+
+            move_uploaded_file($file_tmp, "images/profile/" . $file_name);
+            $attach_files = 'images/profile/' . $file_name;
+            $query_add .= ",`image`='" . $attach_files . "'";
+            echo $query_add;
+        }
+
+    } else {
+        $query_add .= '';
+    }
+
+    $update = $db_handle->insertQuery("UPDATE `admin_login` SET `name`='$name'" . $query_add . " WHERE id='$id'");
+
+    echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='Profile';
+                </script>";
+
+}
+
+if (isset($_POST["editPass"])) {
+    $id = $db_handle->checkValue($_SESSION['user_id']);
+
+    $old_pass = $db_handle->checkValue($_POST['old_pass']);
+
+    $new_pass = $db_handle->checkValue($_POST['new_pass']);
+
+    $cnfrm_pass = $db_handle->checkValue($_POST['cnfrm_pass']);
+
+
+    $row = $db_handle->numRows("SELECT * FROM admin_login where id={$id} and password={$old_pass}");
+
+    if($row==1&&$new_pass==$cnfrm_pass){
+        $update = $db_handle->insertQuery("UPDATE `admin_login` SET `password`='$new_pass' WHERE id='$id'");
+
+        echo "<script>
+                document.cookie = 'alert = 4;';
+                window.location.href='Profile';
+                </script>";
+    }else{
+        echo "<script>
+                document.cookie = 'alert = 6;';
+                window.location.href='Profile';
+                </script>";
+    }
 }
