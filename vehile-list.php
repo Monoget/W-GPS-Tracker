@@ -120,6 +120,7 @@ $db_handle = new DBController();
                                         <thead>
                                         <tr>
                                             <th>SL</th>
+                                            <th>ID</th>
                                             <th>Vehicle Name</th>
                                             <th>Driver Name</th>
                                             <th>Driver Number</th>
@@ -137,6 +138,7 @@ $db_handle = new DBController();
                                             ?>
                                             <tr>
                                                 <td><?php echo $i + 1; ?></td>
+                                                <td><?php echo $data[$i]["id"]; ?></td>
                                                 <td><?php echo $data[$i]["name"]; ?></td>
                                                 <td><?php echo $data[$i]["driver_name"]; ?></td>
                                                 <td><?php echo $data[$i]["driver_number"]; ?></td>

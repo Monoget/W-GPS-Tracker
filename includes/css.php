@@ -1,5 +1,5 @@
 <?php
-if(!isset($_SESSION["name"])){
+if(!isset($_SESSION["user_id"])){
     echo "<script>
                 window.location.href='Login';
                 </script>";
