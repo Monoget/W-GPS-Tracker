@@ -198,7 +198,65 @@ $db_handle = new DBController();
     Scripts
 ***********************************-->
 <!-- Required vendors -->
+
 <?php require_once('includes/js.php'); ?>
+
+<?php
+if (isset($_GET['del_vehicle_id'])) {
+    ?>
+    <script type="text/javascript">
+        setTimeout(function () {
+            swal({
+                    title: "Are you sure?",
+                    text: "You will not be able to recover this Vehicle!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, delete it!",
+                    cancelButtonText: "No, cancel!",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                }).then((willDelete) => {
+                    if (willDelete.dismiss!='cancel') {
+                        let currentUrl = window.location.href;
+                        let params = (new URL(currentUrl)).searchParams;
+                        let vehicle_id = params.get('del_vehicle_id');
+                        $.ajax({
+                            type: 'get',
+                            url: 'Delete',
+                            data: {
+                                vehicle_id: vehicle_id
+                            },
+                            success: function (data) {
+                                swal({
+                                    title: 'Vehicle Delete',
+                                    text: 'Vehicle Deleted Successfully',
+                                    type: 'error',
+                                    confirmButtonClass: 'btn-danger',
+                                    confirmButtonText: 'OK',
+                                }).then((e) => {
+                                    window.location = 'Vehicle-List';
+                                });
+                            }
+                        });
+                    } else {
+                        swal({
+                            title: 'Cancelled',
+                            text: 'Your vehicle is safe :)',
+                            type: 'error',
+                            confirmButtonClass: 'btn-success',
+                            confirmButtonText: 'OK',
+                        }).then((e) => {
+                            window.location = 'Vehicle-List';
+                        });
+                    }
+                });
+        }, 1000);
+    </script>
+    <?php
+}
+?>
+
 
 </body>
 </html>

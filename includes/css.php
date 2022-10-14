@@ -6,7 +6,7 @@ if(!isset($_SESSION["name"])){
 }
 ?>
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-<link href="vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
+<link href="vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
 <!-- Datatable -->
 <link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
 

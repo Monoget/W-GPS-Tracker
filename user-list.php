@@ -227,5 +227,61 @@ $db_handle = new DBController();
 <!-- Required vendors -->
 <?php require_once('includes/js.php'); ?>
 
+<?php
+if (isset($_GET['del_user_id'])) {
+    ?>
+    <script type="text/javascript">
+        setTimeout(function () {
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this Vehicle!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonClass: "btn-danger",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            }).then((willDelete) => {
+                if (willDelete.dismiss!='cancel') {
+                    let currentUrl = window.location.href;
+                    let params = (new URL(currentUrl)).searchParams;
+                    let user_id = params.get('del_user_id');
+                    $.ajax({
+                        type: 'get',
+                        url: 'Delete',
+                        data: {
+                            user_id: user_id
+                        },
+                        success: function (data) {
+                            swal({
+                                title: 'User Delete',
+                                text: 'User Deleted Successfully',
+                                type: 'error',
+                                confirmButtonClass: 'btn-danger',
+                                confirmButtonText: 'OK',
+                            }).then((e) => {
+                                window.location = 'User-List';
+                            });
+                        }
+                    });
+                } else {
+                    swal({
+                        title: 'Cancelled',
+                        text: 'Your user is safe :)',
+                        type: 'error',
+                        confirmButtonClass: 'btn-success',
+                        confirmButtonText: 'OK',
+                    }).then((e) => {
+                        window.location = 'User-List';
+                    });
+                }
+            });
+        }, 1000);
+    </script>
+    <?php
+}
+?>
+
 </body>
 </html>
