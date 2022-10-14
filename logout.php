@@ -3,5 +3,6 @@ session_start();
 session_unset();
 session_destroy();
 echo "<script>
-                window.location.href='Login';
-                </script>";
+        document.cookie = 'alert = 2;';
+        window.location.href='Login';
+      </script>";

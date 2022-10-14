@@ -13,7 +13,7 @@ if (isset($_POST["addVehicle"])) {
     $insert = $db_handle->insertQuery("INSERT INTO `vehicle`(`name`, `driver_name`, `driver_number`, `inserted_at`) VALUES ('$name','$driver_name','$driver_number','$inserted_at')");
 
     echo "<script>
-                document.cookie = 'alert = 1;';
+                document.cookie = 'alert = 3;';
                 window.location.href='Add-Vehicle';
                 </script>";
 }
@@ -55,7 +55,7 @@ if (isset($_POST["addUser"])) {
     $insert = $db_handle->insertQuery("INSERT INTO `admin_login`( `name`, `image`, `email`, `password`, `role`, `inserted_at`) VALUES ('$name','$attach_files','$email','$password','$role','$inserted_at')");
 
     echo "<script>
-                document.cookie = 'alert = 1;';
+                document.cookie = 'alert = 3;';
                 window.location.href='Add-User';
                 </script>";
 }

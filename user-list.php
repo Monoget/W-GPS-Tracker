@@ -59,6 +59,87 @@ $db_handle = new DBController();
         <!-- row -->
         <div class="container-fluid">
             <div class="row">
+                <?php
+                if (isset($_GET["user_id"])) {
+                    $data = $db_handle->runQuery("SELECT * FROM admin_login where id={$_GET["user_id"]}");
+                    ?>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit User</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="basic-form">
+
+                                    <form action="Update" method="post" enctype="multipart/form-data">
+                                        <input type="hidden" name="id" value="<?php echo $data[0]["id"]; ?>" required>
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Name <span class="text-danger">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="text" name="name" class="form-control" value="<?php echo $data[0]["name"]; ?>" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">User Email <span class="text-danger">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="email" name="email" class="form-control" value="<?php echo $data[0]["email"]; ?>" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">User Password <span class="text-danger">*</span></label>
+                                            <div class="col-sm-9">
+                                                <input type="password" name="password" class="form-control" value="<?php echo $data[0]["password"]; ?>" placeholder="Password">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">User Icon</label>
+                                            <div class="col-sm-8">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">Upload</span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" name="user_icon">
+                                                        <label class="custom-file-label">Choose file</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <img src="<?php echo $data[0]["image"]; ?>" class="img-fluid" alt="" style="height: 50px;width: 50px;border-radius: 50%"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Role <span class="text-danger">*</span></label>
+                                            <div class="col-sm-9">
+                                                <select class="form-control" id="sel1" name="role">
+                                                    <option>Choose...</option>
+                                                    <option value="Teacher" <?php
+                                                                                if($data[0]["role"]=='Teacher')
+                                                                                    echo 'selected';
+                                                                            ?>>
+                                                                            Teacher</option>
+                                                    <option value="Admin" <?php
+                                                                            if($data[0]["role"]=='Admin')
+                                                                                echo 'selected';
+                                                                            ?>>
+                                                                            Admin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary" name="editUser">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php
+                } else {
+                ?>
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
@@ -108,6 +189,9 @@ $db_handle = new DBController();
                         </div>
                     </div>
                 </div>
+                    <?php
+                }
+                ?>
             </div>
         </div>
     </div>

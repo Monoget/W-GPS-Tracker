@@ -22,7 +22,7 @@ if (isset($_POST["submit"])) {
                 </script>";
     }else{
         echo "<script>
-                document.cookie = 'alert = 2;';
+                document.cookie = 'alert = 6;';
                 window.location.href='Login';
                 </script>";
     }
