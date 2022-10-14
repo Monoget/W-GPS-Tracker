@@ -72,7 +72,12 @@ $db_handle = new DBController();
                                 <div class="media-body">
                                     <p class="mb-1">Total Vehicle</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 mr-3">783k</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 mr-3">
+                                            <?php
+                                                $row = $db_handle->numRows("SELECT * FROM vehicle");
+                                                echo $row;
+                                            ?>
+                                        </h2>
                                     </div>
                                 </div>
                                 <span class="border rounded-circle p-4">
@@ -91,7 +96,12 @@ $db_handle = new DBController();
                                 <div class="media-body">
                                     <p class="mb-1">Total User</p>
                                     <div class="d-flex flex-wrap">
-                                        <h2 class="fs-40 font-w600 text-white mb-0 mr-3">76</h2>
+                                        <h2 class="fs-40 font-w600 text-white mb-0 mr-3">
+                                            <?php
+                                            $row = $db_handle->numRows("SELECT * FROM admin_login");
+                                            echo $row;
+                                            ?>
+                                        </h2>
                                     </div>
                                 </div>
                                 <span class="border rounded-circle p-4">

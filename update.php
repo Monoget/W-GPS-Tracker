@@ -116,7 +116,6 @@ if (isset($_POST["editProfile"])) {
                 document.cookie = 'alert = 4;';
                 window.location.href='Profile';
                 </script>";
-
 }
 
 if (isset($_POST["editPass"])) {
