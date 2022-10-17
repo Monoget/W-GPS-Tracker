@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2022 at 10:02 PM
+-- Generation Time: Oct 17, 2022 at 07:47 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -35,6 +35,7 @@ CREATE TABLE `admin_login` (
   `email` varchar(30) NOT NULL,
   `password` varchar(20) NOT NULL,
   `role` varchar(15) NOT NULL DEFAULT 'sales',
+  `inserted_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,9 +43,11 @@ CREATE TABLE `admin_login` (
 -- Dumping data for table `admin_login`
 --
 
-INSERT INTO `admin_login` (`id`, `name`, `ip`, `image`, `email`, `password`, `role`, `updated_at`) VALUES
-(1, 'Monoget Saha', '27.147.190.199', 'images/profile/12.png', 'monoget1@gmail.com', '@BCD1234', 'admin', '2022-10-10 20:02:16'),
-(2, 'Super Admin', '103.107.160.134', 'images/profile/12.png', 'admin@gmail.com', '@BCD1234', 'admin', '2022-10-10 20:02:11');
+INSERT INTO `admin_login` (`id`, `name`, `ip`, `image`, `email`, `password`, `role`, `inserted_at`, `updated_at`) VALUES
+(1, 'Monoget Saha', '27.147.190.199', 'images/profile/12.png', 'monoget1@gmail.com', '@BCD1234', 'Admin', '2022-10-13 23:14:33', '2022-10-13 17:17:49'),
+(2, 'Super Admin', '103.107.160.134', 'images/profile/12.png', 'admin@gmail.com', '@BCD1234', 'Admin', '2022-10-13 00:00:00', '2022-10-13 17:17:53'),
+(3, 'Monoget Saha', '', 'images/profile/12.png', 'monoget2@gmail.com', '@BCD1234', 'Teacher', '2022-10-13 23:17:23', '2022-10-14 07:36:50'),
+(4, 'Monoget Saha', '', 'images/profile/86807_4.jpg', 'monoget4@gmail.com', '@BCD1234', 'Admin', '2022-10-13 23:26:38', '2022-10-14 04:54:28');
 
 -- --------------------------------------------------------
 
@@ -69,6 +72,8 @@ CREATE TABLE `route` (
 CREATE TABLE `vehicle` (
   `id` int(11) NOT NULL,
   `name` varchar(20) NOT NULL,
+  `driver_name` varchar(100) NOT NULL,
+  `driver_number` varchar(100) NOT NULL,
   `inserted_at` datetime NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
